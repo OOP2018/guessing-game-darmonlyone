@@ -12,7 +12,7 @@ public class SampleGame extends NumberGame {
     private int secret;
     
 	/** count guesses */
-//TODO add an attribute to count guesses
+    private static int count = 0;
 
     /** Initialize a new default game. */
     public SampleGame()
@@ -37,7 +37,9 @@ public class SampleGame extends NumberGame {
      * @param number is the user's guess
      * @return true if guess is correct, false otherwise
      */
+	@Override
     public boolean guess(int number) {
+		count++;
     	if (number == secret) {
     		setMessage("Correct! The decimal value is "+secret);
     		return true;
@@ -66,4 +68,12 @@ public class SampleGame extends NumberGame {
     public String toString() {
     	return "Convert a number from hexadecimal to decimal.";
     }
+
+	/**
+	 *
+	 * @return count number game that you have guess
+	 */
+	public  int getCount() {
+		return count;
+	}
 }
