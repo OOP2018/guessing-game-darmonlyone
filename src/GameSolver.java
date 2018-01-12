@@ -1,6 +1,7 @@
 import java.util.Random;
 /**
  * Automatically find the secret to any NumberGame.
+ * @author Manusporn fukkham
  */
 public class GameSolver {
     /**
