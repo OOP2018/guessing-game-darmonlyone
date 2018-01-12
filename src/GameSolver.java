@@ -11,7 +11,7 @@ public class GameSolver {
      * solution.
      *
      * @param game is the NumberGame to solve
-     * @return
+     * @return the solution of the game
      */
     public int play(NumberGame game) {
         Random rd = new Random();
@@ -19,9 +19,7 @@ public class GameSolver {
         int lowestGuess = 1;
         // for limit the highest after time
         int highestGuess = game.getUpperBound();
-
         System.out.println(game.toString());
-
         System.out.println(game.getMessage());
         while (true) {
             System.out.print("Your answer? ");
@@ -32,10 +30,11 @@ public class GameSolver {
             boolean correct = game.guess(guess);
             System.out.println(game.getMessage());
             if (correct) return guess;
-
+            //set the limit lowest guess
             if (game.getMessage().contains("small")) {
                 lowestGuess = guess+1;
-            } else if (game.getMessage().contains("large")) {
+            }//set the limit highest guess
+            else if (game.getMessage().contains("large")) {
                 highestGuess = guess-1;
             }
 
