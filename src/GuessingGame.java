@@ -35,7 +35,7 @@ public class GuessingGame extends NumberGame{
     public boolean guess(int number){
         count++;
         if (number == secret) {
-            setMessage("Correct! the secret number is "+secret);
+            setMessage("Correct! the guessing number is "+number);
             return true;
         }
         // the number close to solution less than 10 number
@@ -59,6 +59,7 @@ public class GuessingGame extends NumberGame{
      *
      * @return UpperBound for the solution
      */
+    @Override
     public int getUpperBound(){
         return Math.abs(upperBound);
     }
@@ -72,6 +73,7 @@ public class GuessingGame extends NumberGame{
      *
      * @return count number game that you have guess
      */
+    @Override
     public  int getCount() {
         return count;
     }

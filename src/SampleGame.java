@@ -60,6 +60,7 @@ public class SampleGame extends NumberGame {
     }
 	
 	/** Get the game upper bound. */
+	@Override
 	public int getUpperBound() {
 		return upperBound;
 	}
@@ -73,6 +74,7 @@ public class SampleGame extends NumberGame {
 	 *
 	 * @return count number game that you have guess
 	 */
+	@Override
 	public  int getCount() {
 		return count;
 	}
