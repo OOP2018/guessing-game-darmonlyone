@@ -5,7 +5,7 @@ import java.util.Random;
  * Game of guessing a secrect number.
  * @author Manusporn Fukkham
  */
-public class GuessingGame extends NumberGame{
+public class DarmGame extends NumberGame{
     /** upper bound for secret number */
     private int upperBound;
     /** the solution of the game */
@@ -13,11 +13,11 @@ public class GuessingGame extends NumberGame{
     /** count the game play */
     private int count;
     /** Initialize a new default game. */
-    public GuessingGame(){
+    public DarmGame(){
         this(100);
     }
 
-    public GuessingGame(int upperbound){
+    public DarmGame(int upperbound){
          Random rd = new Random();
         //set UpperBound
         this.upperBound = upperbound;
