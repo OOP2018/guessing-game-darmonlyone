@@ -25,8 +25,8 @@ public class GameSolver {
         while (true) {
             System.out.print("Your answer? ");
             int guess = rd.nextInt(highestGuess) + 1;
-                while (guess < lowestGuess)
-                    guess = rd.nextInt(highestGuess) + 1;
+                if (guess < lowestGuess)
+                    guess = lowestGuess + Math.abs((highestGuess - lowestGuess) / 2);
             System.out.println(guess);
             boolean correct = game.guess(guess);
             System.out.println(game.getMessage());
