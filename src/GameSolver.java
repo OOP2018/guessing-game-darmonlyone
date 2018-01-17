@@ -1,4 +1,3 @@
-import java.util.Random;
 /**
  * Automatically find the secret to any NumberGame.
  * @author Manusporn fukkham
@@ -15,15 +14,13 @@ public class GameSolver {
      * @return the solution of the game
      */
     public int play(NumberGame game) {
-        Random rd = new Random();
         int guess = 0;
         boolean correct = false;
         // for limit the lowest number of guessing after time
         int lowestGuess = 1;
-        // for limit the highest number of guessin after time
+        // for limit the highest number of guessing after time
         int highestGuess = game.getUpperBound();
-        System.out.println(game.toString());
-        System.out.println(game.getMessage());
+        System.out.println(game);
         while (!correct) {
             guess = lowestGuess + (highestGuess - lowestGuess) / 2;
             correct = game.guess(guess);

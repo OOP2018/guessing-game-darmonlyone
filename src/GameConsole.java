@@ -13,20 +13,17 @@ public class GameConsole {
 	 */
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
-
 		// describe the game
-		System.out.println( game.toString() );
-		
-		// This is just an example.
-		System.out.println( game.getMessage() );
+		System.out.println(game);
+		int guess;
+		boolean correct;
 		do {
 			System.out.print("Your answer? ");
-			int guess = console.nextInt();
-			boolean correct = game.guess(guess);
+			guess = console.nextInt();
+			correct = game.guess(guess);
 			System.out.println(game.getMessage());
-			if (correct) return guess;
-		}while (true);
-
+		}while (!correct);
+		return guess;
 	}
 	
 }
