@@ -3,6 +3,7 @@ import java.util.Scanner;
 /**
  *
  *  Play guessing game on the console.
+ * @author Manusporn Fukkham
  */
 public class GameConsole {
 

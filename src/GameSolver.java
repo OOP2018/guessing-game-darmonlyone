@@ -23,23 +23,18 @@ public class GameSolver {
         System.out.println(game.toString());
         System.out.println(game.getMessage());
         while (true) {
-            System.out.print("Your answer? ");
-            int guess = rd.nextInt(highestGuess) + 1;
-                if (guess < lowestGuess)
-                    guess = lowestGuess + Math.abs((highestGuess - lowestGuess) / 2);
-            System.out.println(guess);
+            int guess = lowestGuess + (highestGuess - lowestGuess) / 2;
+            System.out.println("Your answer? " + guess);
             boolean correct = game.guess(guess);
             System.out.println(game.getMessage());
             if (correct) return guess;
             //set the limit lowest guess
             if (game.getMessage().contains("small")) {
-                lowestGuess = guess+1;
+                lowestGuess = guess + 1;
             }//set the limit highest guess
             else if (game.getMessage().contains("large")) {
-                highestGuess = guess-1;
+                highestGuess = guess - 1;
             }
-
         }
-
     }
 }

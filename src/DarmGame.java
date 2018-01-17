@@ -1,4 +1,3 @@
-
 import java.util.Random;
 
 /**
@@ -17,7 +16,16 @@ public class DarmGame extends NumberGame{
         this(100);
     }
 
+    /**
+     * Initialize a new game.
+     * @param upperbound is too limit the max valus of this game.
+     *                   upperbound should more than 0.
+     */
     public DarmGame(int upperbound){
+        if (upperbound < 1){
+            System.out.println("Please set upperbound more than 0");
+            System.exit(0);
+        }
          Random rd = new Random();
         //set UpperBound
         this.upperBound = upperbound;

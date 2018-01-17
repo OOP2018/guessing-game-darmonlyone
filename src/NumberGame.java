@@ -5,12 +5,12 @@
  * 
  * Your class should not override getMessage() and setMessage(),
  * just use the methods from this class.
+ * @ author Manusporn Fukkham
  */
 public class NumberGame {
 	/** A helpful message for user. */
 	private String message;
 
-	private int count;
     /** Initialize a new default game. */
     public NumberGame() {
 		// initialize your game.
@@ -63,6 +63,10 @@ public class NumberGame {
 		return "You should override this method for your game";
     }
 
+	/**
+	 *
+	 * @return count of guessing
+	 */
 	public int getCount() {
 		return 0;
 	}

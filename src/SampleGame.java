@@ -2,7 +2,7 @@ import java.util.Random;
 /**
  * Example guessing game.
  * 
- * @authorManusporn fukkham
+ * @author Manusporn fukkham
  * @version 2018.01.11
  */
 public class SampleGame extends NumberGame {
