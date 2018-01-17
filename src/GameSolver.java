@@ -16,25 +16,26 @@ public class GameSolver {
      */
     public int play(NumberGame game) {
         Random rd = new Random();
-        // for limit lowest guess after time
+        int guess = 0;
+        boolean correct = false;
+        // for limit the lowest number of guessing after time
         int lowestGuess = 1;
-        // for limit the highest after time
+        // for limit the highest number of guessin after time
         int highestGuess = game.getUpperBound();
         System.out.println(game.toString());
         System.out.println(game.getMessage());
-        while (true) {
-            int guess = lowestGuess + (highestGuess - lowestGuess) / 2;
-            System.out.println("Your answer? " + guess);
-            boolean correct = game.guess(guess);
-            System.out.println(game.getMessage());
-            if (correct) return guess;
-            //set the limit lowest guess
-            if (game.getMessage().contains("small")) {
+        while (!correct) {
+            guess = lowestGuess + (highestGuess - lowestGuess) / 2;
+            correct = game.guess(guess);
+            System.out.printf("Your answer? %d %n%s %n",guess ,game.getMessage());
+            //set the lowest guess
+            if ((game.getMessage().toLowerCase()).contains("small")) {
                 lowestGuess = guess + 1;
-            }//set the limit highest guess
-            else if (game.getMessage().contains("large")) {
+            }//set the highest guess
+            else if ((game.getMessage().toLowerCase()).contains("large")) {
                 highestGuess = guess - 1;
             }
         }
+        return guess;
     }
 }

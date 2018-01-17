@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// upper limit for secret number in guessing game (should be more than 0)
-		int upperBound = Integer.MAX_VALUE-1;
+		int upperBound = 100;
 		NumberGame game = new DarmGame(upperBound);
 //		NumberGame game = new SampleGame(upperBound);
 //		NumberGame game = new PakanonGuessingGame(upperBound);
