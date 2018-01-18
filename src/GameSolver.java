@@ -24,7 +24,6 @@ public class GameSolver {
         while (!correct) {
             guess = lowestGuess + (highestGuess - lowestGuess) / 2;
             correct = game.guess(guess);
-            System.out.printf("Your answer? %d %n%s %n",guess ,game.getMessage());
             //set the lowest guess
             if ((game.getMessage().toLowerCase()).contains("small")) {
                 lowestGuess = guess + 1;
