@@ -20,7 +20,6 @@ public class GameSolver {
         int lowestGuess = 1;
         // for limit the highest number of guessing after time
         int highestGuess = game.getUpperBound();
-        System.out.println(game);
         while (!correct) {
             guess = lowestGuess + (highestGuess - lowestGuess) / 2;
             correct = game.guess(guess);
