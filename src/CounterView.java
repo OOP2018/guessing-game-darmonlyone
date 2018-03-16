@@ -30,6 +30,7 @@ public class CounterView implements java.util.Observer {
 	public CounterView(NumberGame counter) {
 		this.counter = counter;
 		initComponents();
+		
 	}
 
 	private void initComponents() {
