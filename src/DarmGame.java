@@ -26,12 +26,16 @@ public class DarmGame extends NumberGame{
             System.out.println("Please set upperbound more than 0");
             System.exit(0);
         }
-         Random rd = new Random();
-        //set UpperBound
-        this.upperBound = upperbound;
-        //create secret number
-        secret = rd.nextInt(upperBound)+1;
+         setSecret(upperbound);
         System.out.println("I'm thinking of a number between 1 and "+upperbound);
+    }
+
+    public void setSecret(int secret) {
+        Random rd = new Random();
+        //set UpperBound
+        this.upperBound = secret;
+        //create secret number
+        this.secret = rd.nextInt(upperBound)+1;
     }
 
     /**
@@ -42,16 +46,18 @@ public class DarmGame extends NumberGame{
     @Override
     public boolean guess(int number){
         count++;
+        setChanged();
+        notifyObservers();
         if (number == secret) {
-            setMessage("Correct! the guessing number is "+number);
+            setMessage("Correct! "+ secret +" is secret number");
             return true;
         }
         // the number close to solution less than 10 number
-        if ((number - secret )>= -10 && (number - secret )<= 0 ) {
+        if ((number - secret )>= -5 && (number - secret )<= 0 ) {
             setMessage("too small, you are so close");
         }
         // the number close to solution more than 10 number
-        else if ((number - secret )<= 10 && (number - secret )>= 0 ) {
+        else if ((number - secret )<= 5 && (number - secret )>= 0 ) {
             setMessage("too large, you are so close");
         }
         else if (number < secret) {
@@ -84,5 +90,12 @@ public class DarmGame extends NumberGame{
     @Override
     public  int getCount() {
         return count;
+    }
+
+
+    public void setCount(int count) {
+        this.count = count;
+        setChanged();
+        notifyObservers();
     }
 }
