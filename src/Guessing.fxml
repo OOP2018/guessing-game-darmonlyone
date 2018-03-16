@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="376.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuessingController">
+   <children>
+      <Pane prefHeight="375.0" prefWidth="606.0">
+         <children>
+            <Label layoutX="94.0" layoutY="27.0" prefHeight="64.0" prefWidth="441.0" text="Darm Guessing Game">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <Button fx:id="startBut" layoutX="65.0" layoutY="106.0" mnemonicParsing="false" onAction="#start" prefHeight="84.0" prefWidth="171.0" text="Start">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
+            <TextField fx:id="upperboundText" alignment="CENTER" layoutX="266.0" layoutY="149.0" onAction="#setUpperBound" prefHeight="31.0" prefWidth="134.0" text="100">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <Label layoutX="266.0" layoutY="109.0" prefHeight="26.0" prefWidth="134.0" text="Set Upperbound">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="settedLable" alignment="CENTER" layoutX="414.0" layoutY="106.0" prefHeight="31.0" prefWidth="106.0" text="Setted" textAlignment="CENTER" textFill="RED" />
+            <Button fx:id="setButton" layoutX="414.0" layoutY="148.0" mnemonicParsing="false" onAction="#setUpperBound" prefHeight="31.0" prefWidth="106.0" text="Set">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="80.0" layoutY="216.0" prefHeight="39.0" prefWidth="134.0" text="Guess between 0 -">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="upperLable" layoutX="209.0" layoutY="216.0" prefHeight="39.0" prefWidth="57.0" text="Upper">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputText" alignment="CENTER" layoutX="280.0" layoutY="217.0" onAction="#okay" prefHeight="38.0" prefWidth="261.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <Button fx:id="okButton" layoutX="280.0" layoutY="289.0" mnemonicParsing="false" onAction="#okay" prefHeight="53.0" prefWidth="106.0" text="OK">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="clearButton" layoutX="429.0" layoutY="289.0" mnemonicParsing="false" onAction="#clear" prefHeight="53.0" prefWidth="106.0" text="Clear">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="loveLable" layoutX="65.0" layoutY="255.0" prefHeight="84.0" prefWidth="171.0" text="Label">
+               <font>
+                  <Font size="19.0" />
+               </font></Label>
+         </children></Pane>
+   </children>
+</AnchorPane>

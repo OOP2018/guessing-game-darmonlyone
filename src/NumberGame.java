@@ -7,10 +7,13 @@
  * just use the methods from this class.
  * @ author Manusporn Fukkham
  */
-public class NumberGame {
+public class NumberGame extends java.util.Observable {
 	/** A helpful message for user. */
 	private String message;
 
+	int secret;
+
+	private int count;
     /** Initialize a new default game. */
     public NumberGame() {
 		// initialize your game.
@@ -68,6 +71,13 @@ public class NumberGame {
 	 * @return count of guessing
 	 */
 	public int getCount() {
-		return 0;
+        return 0;
 	}
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+    public void setSecret(int secret){
+	   this.secret = secret;
+    }
 }
