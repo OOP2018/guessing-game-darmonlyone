@@ -5,11 +5,11 @@ import javafx.scene.paint.Color;
 
 public class GuessingController {
 
-    int upperBound;
+    private int upperBound;
 
-    NumberGame game;
+    private NumberGame game;
 
-    CounterView counterView;
+    private CounterView counterView;
     @FXML
     private Button startBut;
 
@@ -61,12 +61,13 @@ public class GuessingController {
         upperboundText.setDisable(false);
         loveLable.setVisible(false);
         inputText.setDisable(true);
+
     }
 
     @FXML
     void okay(ActionEvent event) {
         loveLable.setVisible(true);
-        int gues = 0;
+        int gues;
         try {
             gues = Integer.parseInt(inputText.getText());
         }catch (Exception e){
@@ -76,6 +77,7 @@ public class GuessingController {
         if (!game.guess(gues)){
             loveLable.setTextFill(Color.RED);
         }else{
+            inputText.setDisable(true);
             okButton.setDisable(true);
             loveLable.setTextFill(Color.GREEN);
         }
