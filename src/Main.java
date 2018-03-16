@@ -19,7 +19,6 @@ public class Main extends Application{
 //		int upperBound = 100;
 //		NumberGame game = new DarmGame(upperBound);
 //		NumberGame game = new SampleGame(upperBound);
-//		NumberGame game = new PakanonGuessingGame(upperBound);
 //		GameConsole ui = new GameConsole();
 //		GameSolver ui = new GameSolver();
 //		int solution = ui.play( game );

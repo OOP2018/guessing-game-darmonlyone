@@ -81,7 +81,7 @@ public class GuessingController {
             okButton.setDisable(true);
             loveLable.setTextFill(Color.GREEN);
         }
-        
+
         loveLable.setText(game.getMessage());
     }
 
