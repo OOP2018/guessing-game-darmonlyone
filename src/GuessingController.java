@@ -82,7 +82,6 @@ public class GuessingController {
             loveLable.setTextFill(Color.GREEN);
         }
         loveLable.setText(game.getMessage());
-        
     }
 
     @FXML
