@@ -13,7 +13,7 @@ import java.util.Observable;
  * A Controller for a window that shows the value of a Counter.
  * This has only one component (but you can add more components),
  * so write it in code instead of FXML.
- *
+ *@author Manusporn Fukkham
  */
 public class CounterView implements java.util.Observer {
 	/** the stage (top-level window) for showing scene */
@@ -33,6 +33,7 @@ public class CounterView implements java.util.Observer {
 
 	}
 
+	/**To init the window of counting*/
 	private void initComponents() {
 		stage = new Stage();
 		HBox root = new HBox();

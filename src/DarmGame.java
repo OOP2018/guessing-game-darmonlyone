@@ -95,7 +95,5 @@ public class DarmGame extends NumberGame{
 
     public void setCount(int count) {
         this.count = count;
-        setChanged();
-        notifyObservers();
     }
 }

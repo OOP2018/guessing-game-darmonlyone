@@ -73,10 +73,11 @@ public class NumberGame extends java.util.Observable {
 	public int getCount() {
         return 0;
 	}
-
+	/**set count of playing*/
     public void setCount(int count) {
         this.count = count;
     }
+    /**set secret number*/
     public void setSecret(int secret){
 	   this.secret = secret;
     }

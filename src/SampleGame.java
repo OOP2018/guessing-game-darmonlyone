@@ -64,7 +64,7 @@ public class SampleGame extends NumberGame {
 	public int getUpperBound() {
 		return upperBound;
 	}
-    
+    /**Set Object as String*/
     @Override
     public String toString() {
     	return "Convert a number from hexadecimal to decimal.";

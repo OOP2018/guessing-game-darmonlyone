@@ -3,13 +3,16 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 
+/**
+ * FXML controller of guessing game
+ * @author Manusporn Fukkham
+ */
 public class GuessingController {
-
+    /**The upper bound og this game*/
     private int upperBound;
-
+    /**The guessing game*/
     private NumberGame game;
 
-    private CounterView counterView;
     @FXML
     private Button startBut;
 
@@ -37,6 +40,7 @@ public class GuessingController {
     @FXML
     private Label loveLable;
 
+    /**initialize the gueesing game application*/
     @FXML
     public void initialize(){
         upperBound = 100;
@@ -47,11 +51,12 @@ public class GuessingController {
         loveLable.setVisible(false);
         inputText.setDisable(true);
 
-        counterView = new CounterView(game);
+        CounterView counterView = new CounterView(game);
         game.addObserver(counterView);
         counterView.run();
     }
 
+    /**To reset the game after click reset button*/
     @FXML
     void clear(ActionEvent event) {
         inputText.setText("");
@@ -64,6 +69,7 @@ public class GuessingController {
 
     }
 
+    /**To play by guessing the number after click*/
     @FXML
     void okay(ActionEvent event) {
         loveLable.setVisible(true);
@@ -85,6 +91,7 @@ public class GuessingController {
         loveLable.setText(game.getMessage());
     }
 
+    /**To set the upperbound of guessing game*/
     @FXML
     void setUpperBound(ActionEvent event) {
         settedLable.setVisible(true);
@@ -96,6 +103,7 @@ public class GuessingController {
         }
     }
 
+    /**To start a game after click the start button*/
     @FXML
     void start(ActionEvent event) {
         game.setSecret(upperBound);

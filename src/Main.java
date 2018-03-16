@@ -12,9 +12,9 @@ import javafx.stage.Stage;
  */
 public class Main extends Application{
 
+	/**Run the guessing game application*/
 	public static void main(String[] args) {
 		launch(args);
-
 		// upper limit for secret number in guessing game (should be more than 0)
 //		int upperBound = 100;
 //		NumberGame game = new DarmGame(upperBound);
