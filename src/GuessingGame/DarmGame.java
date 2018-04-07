@@ -1,3 +1,5 @@
+package GuessingGame;
+
 import java.util.Random;
 
 /**
@@ -46,10 +48,9 @@ public class DarmGame extends NumberGame{
     @Override
     public boolean guess(int number){
         count++;
-        setChanged();
-        notifyObservers();
         if (number == secret) {
             setMessage("Correct! "+ secret +" is secret number");
+            setChange();
             return true;
         }
         // the number close to solution less than 10 number
@@ -66,7 +67,19 @@ public class DarmGame extends NumberGame{
         else if (number > secret) {
             setMessage("too large");
         }
+        setChange();
         return false;
+    }
+
+    public void setChange(){
+        setChanged();
+        notifyObservers();
+    }
+
+    @Override
+    public void setMessage(String newmessage) {
+        super.setMessage(newmessage);
+        setChange();
     }
 
     /**
@@ -95,5 +108,6 @@ public class DarmGame extends NumberGame{
 
     public void setCount(int count) {
         this.count = count;
+        setChange();
     }
 }

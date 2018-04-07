@@ -1,3 +1,5 @@
+package GuessingGame;
+
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -40,26 +42,20 @@ public class GuessingController {
     @FXML
     private Label loveLable;
 
-    /**initialize the gueesing game application*/
-    @FXML
-    public void initialize(){
-        upperBound = 100;
-        game = new DarmGame(upperBound);
-        settedLable.setVisible(false);
-        upperLable.setText(upperboundText.getText());
-        okButton.setDisable(true);
-        loveLable.setVisible(false);
-        inputText.setDisable(true);
+    public void setGame(NumberGame game) {
+        this.game = game;
+    }
 
-        CounterView counterView = new CounterView(game);
-        game.addObserver(counterView);
-        counterView.run();
+    public void setUpperBound(int upperBound) {
+        this.upperBound = upperBound;
     }
 
     /**To reset the game after click reset button*/
     @FXML
     void clear(ActionEvent event) {
         inputText.setText("");
+        game.setMessage("Let Play");
+        game.setCount(0);
         okButton.setDisable(true);
         startBut.setDisable(false);
         setButton.setDisable(false);
@@ -87,7 +83,6 @@ public class GuessingController {
             okButton.setDisable(true);
             loveLable.setTextFill(Color.GREEN);
         }
-
         loveLable.setText(game.getMessage());
     }
 
@@ -114,6 +109,7 @@ public class GuessingController {
         settedLable.setVisible(false);
         inputText.setDisable(false);
         game.setCount(0);
+        game.setMessage("Let start");
     }
 
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="376.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuessingController">
+<AnchorPane prefHeight="376.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuessingGame.GuessingController">
    <children>
       <Pane prefHeight="375.0" prefWidth="606.0">
          <children>
@@ -26,7 +26,7 @@
                   <Font size="17.0" />
                </font>
             </TextField>
-            <Label layoutX="266.0" layoutY="109.0" prefHeight="26.0" prefWidth="134.0" text="Set Upperbound">
+            <Label layoutX="266.0" layoutY="109.0" prefHeight="26.0" prefWidth="134.0" text="Set Upperbound" visible="false">
                <font>
                   <Font size="17.0" />
                </font>
@@ -42,17 +42,17 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="upperLable" layoutX="209.0" layoutY="216.0" prefHeight="39.0" prefWidth="57.0" text="Upper">
+            <Label fx:id="upperLable" layoutX="209.0" layoutY="216.0" prefHeight="39.0" prefWidth="57.0" text="100">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="inputText" alignment="CENTER" layoutX="280.0" layoutY="217.0" onAction="#okay" prefHeight="38.0" prefWidth="261.0">
+            <TextField fx:id="inputText" alignment="CENTER" disable="true" layoutX="280.0" layoutY="217.0" onAction="#okay" prefHeight="38.0" prefWidth="261.0">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <Button fx:id="okButton" layoutX="280.0" layoutY="289.0" mnemonicParsing="false" onAction="#okay" prefHeight="53.0" prefWidth="106.0" text="Guess">
+            <Button fx:id="okButton" disable="true" layoutX="280.0" layoutY="289.0" mnemonicParsing="false" onAction="#okay" prefHeight="53.0" prefWidth="106.0" text="Guess">
                <font>
                   <Font size="18.0" />
                </font>
@@ -62,7 +62,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="loveLable" alignment="CENTER" layoutX="45.0" layoutY="255.0" prefHeight="84.0" prefWidth="218.0" text="Label">
+            <Label fx:id="loveLable" alignment="CENTER" layoutX="45.0" layoutY="255.0" prefHeight="84.0" prefWidth="218.0" text="Label" visible="false">
                <font>
                   <Font size="16.0" />
                </font></Label>

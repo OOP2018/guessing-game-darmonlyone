@@ -1,3 +1,5 @@
+package GuessingGame;
+
 /**
  * Automatically find the secret to any NumberGame.
  * @author Manusporn fukkham

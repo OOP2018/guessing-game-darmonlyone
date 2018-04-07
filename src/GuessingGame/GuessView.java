@@ -1,3 +1,5 @@
+package GuessingGame;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -15,20 +17,20 @@ import java.util.Observable;
  * so write it in code instead of FXML.
  *@author Manusporn Fukkham
  */
-public class CounterView implements java.util.Observer {
+public class GuessView implements java.util.Observer {
 	/** the stage (top-level window) for showing scene */
 	private Stage stage;
 	/** a counter to show value of */
-	private NumberGame counter;
+	private NumberGame mes;
 	/** the label that shows the counter value. */
 	private Label label;
 
 	/**
-	 * Initialize a CounterView, which shows value of a counter.
-	 * @param counter the Counter to show.
+	 * Initialize a GuessView, which shows value of a counter.
+	 * @param mes the Counter to show.
 	 */
-	public CounterView(NumberGame counter) {
-		this.counter = counter;
+	public GuessView(NumberGame mes) {
+		this.mes = mes;
 		initComponents();
 
 	}
@@ -39,14 +41,14 @@ public class CounterView implements java.util.Observer {
 		HBox root = new HBox();
 		root.setPadding(new Insets(10));
 		label = new Label("   ");
-		label.setPrefWidth(250);
-		label.setFont(new Font("Arial", 80.0));
-		label.setTextFill(Color.RED);
+		label.setPrefWidth(500);
+		label.setFont(new Font("Arial", 40));
+		label.setTextFill(Color.GREEN);
 		label.setAlignment(Pos.CENTER);
 		root.getChildren().add(label);
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setTitle("Count");
+		stage.setTitle("Guess?");
 		stage.sizeToScene();
 	}
 
@@ -57,7 +59,7 @@ public class CounterView implements java.util.Observer {
 	}
 
 	public void displayCount() {
-		label.setText( String.format("%2d", counter.getCount()) );
+		label.setText( String.format("%s", mes.getMessage()) );
 	}
 
 	@Override
